@@ -1,0 +1,3 @@
+---
+redis_enabled: yes
+redis_started: yes

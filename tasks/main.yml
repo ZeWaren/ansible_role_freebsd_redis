@@ -1,0 +1,18 @@
+- name: Make sure redis is installed
+  pkgng: name=redis state=present
+
+- name: Ensure redis is enabled
+  sysrc: name=redis value=YES
+  when: redis_enabled
+
+- name: Ensure redis is not enabled
+  sysrc: name=redis value=YES
+  when: not redis_enabled
+
+- name: Ensure redis is started
+  service: name=redis state=started
+  when: redis_started
+
+- name: Ensure redis is not started
+  service: name=redis state=started
+  when: not redis_started
