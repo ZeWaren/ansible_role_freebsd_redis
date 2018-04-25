@@ -2,11 +2,11 @@
   pkgng: name=redis state=present
 
 - name: Ensure redis is enabled
-  sysrc: name=redis value=YES
+  sysrc: name=redis_enable value=YES
   when: redis_enabled
 
 - name: Ensure redis is not enabled
-  sysrc: name=redis value=YES
+  sysrc: name=redis_enable value=YES
   when: not redis_enabled
 
 - name: Ensure redis is started
